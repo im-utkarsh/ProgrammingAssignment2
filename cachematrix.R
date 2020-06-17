@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## First function makeCacheMatrix creates list of functions that are used to set
+## matrix, get matrix, set inverse of matrix and get inverse of matrix.
+## Second function checks to see if the inverse has already been calculated. If 
+## so, it gets the inverse from the cache and skips the computation. Otherwise, 
+## it calculates the inverse of the matrix and sets the value of the inverse in 
+## the cache via the setinv function
 
-## Write a short comment describing this function
+## Creating list of functions.
 
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
@@ -19,7 +23,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## Calculate mean if not present in cache.
 
 cacheSolve <- function(x, ...) {
     inv <- x$getinv()
@@ -30,6 +34,5 @@ cacheSolve <- function(x, ...) {
     data <- x$get()
     inv <- solve(data, ...)
     x$setinv(inv)
-    inv
-        ## Return a matrix that is the inverse of 'x'
+    inv                 ## Return a matrix that is the inverse of 'x'
 }
